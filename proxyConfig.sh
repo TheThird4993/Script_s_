@@ -26,8 +26,7 @@ if [ ! -d "$HOME/.ssh" ]; then
 else
     echo "O diretório '.ssh' já existe! Nenhuma alteração foi feita."
 fi
-
-echo -e "Host $HOST_DES\n  ProxyCommand /home/$USER/.local/bin/cloudflared access ssh --hostname %h" >> $HOME/.ssh/config
+    echo -e "Host $HOST_DES\n  ProxyCommand $HOME/.local/bin/cloudflared access ssh --hostname %h" >> $HOME/.ssh/config
     echo "Proxy configurado!"
 rm -rf $TEMP_DIR
     echo "Diretório temporário removido!"
